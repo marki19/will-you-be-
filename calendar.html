@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose a Date</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #FFB6C1;
+    }
+    .container {
+      background: #FFF0F5;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    input[type="date"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #4caf50;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>When should we go on a date?</h1>
+    <input type="date" id="datePicker">
+    <button onclick="submitDate()">Confirm Date</button>
+  </div>
+  <script>
+    function submitDate() {
+      const selectedDate = document.getElementById("datePicker").value;
+      if (selectedDate) {
+        window.location.href = "what should we do.html";  // Replace 'nextpage.html' with your actual next page's file name
+      } else {
+        alert("Please select a date before confirming.");
+      }
+    }
+  </script>
+</body>
+</html>

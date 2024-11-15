@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Date</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #FFB6C1;
+    }
+    .container {
+      background: #FFF0F5;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Select a Date</h1>
+    <label for="dateInput">Select Date:</label>
+    <input type="date" id="dateInput">
+    <button onclick="saveDate()">Next Page</button>
+  </div>
+
+  <script>
+    function saveDate() {
+      const dateInput = document.getElementById('dateInput').value;
+      if (dateInput) {
+        // Store the date in localStorage
+        localStorage.setItem('selectedDate', dateInput);
+        window.location.href = 'activities.html';  // Redirect to the second page
+      } else {
+        alert("Please select a date!");
+      }
+    }
+  </script>
+</body>
+</html>

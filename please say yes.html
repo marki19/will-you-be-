@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Date Activities</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #FFB6C1;
+    }
+    .container {
+      background: #FFF0F5;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      margin-bottom: 20px;
+    }
+    ul {
+      text-align: left;
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin: 5px 0;
+      padding: 5px;
+      background-color: #FFD1DC;
+      border-radius: 5px;
+    }
+    img {
+      margin-top: 20px;
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Date Activities</h1>
+    <ul id="activityList"></ul>
+  </div>
+
+  <!-- Cute cat image -->
+  <img src="https://cataas.com/cat" alt="Cute Cat">
+
+  <script>
+    function loadActivities() {
+      const activityList = document.getElementById("activityList");
+      
+      // Retrieve the stored activities from localStorage
+      const activities = JSON.parse(localStorage.getItem('activities'));
+
+      if (activities && activities.length > 0) {
+        activities.forEach(activity => {
+          const listItem = document.createElement("li");
+          listItem.textContent = activity;
+          activityList.appendChild(listItem);
+        });
+      } else {
+        activityList.innerHTML = '<li>No activities listed yet.</li>';
+      }
+    }
+
+    // Load activities when the page is ready
+    window.onload = loadActivities;
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Next Question</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #FFB6C1;
+    }
+    .container {
+      background: #FFF0F5;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button.yes {
+      background-color: #4caf50;
+      color: white;
+    }
+    button.no {
+      background-color: #FF0000;
+      color: white;
+    }
+    button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Would you like to go on a date with me?</h1>
+    <button class="yes" onclick="alert('Yay! Let’s plan it!')">Yes</button>
+    <button class="no" onclick="alert('That’s okay, maybe another time!')">No</button>
+  </div>
+</body>
+</html>
